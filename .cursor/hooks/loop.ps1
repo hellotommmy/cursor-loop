@@ -13,6 +13,16 @@ if (-not (Test-Path $configPath)) {
 
 $config = Get-Content $configPath -Raw | ConvertFrom-Json
 $task = $config.task
+
+if (-not $task -or $task.Trim() -eq "") {
+    @'
+{
+  "decision": "stop"
+}
+'@
+    exit 0
+}
+
 $validationCmd = $config.validation_command
 $validationShell = if ($config.validation_shell) { $config.validation_shell } else { "powershell" }
 $onFail = if ($config.on_validation_fail) { $config.on_validation_fail } else { "Validation failed. Fix the errors:\n{errors}" }

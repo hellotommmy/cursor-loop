@@ -20,6 +20,16 @@ json_escape() {
 }
 
 TASK=$(python3 -c "import json; c=json.load(open('$CONFIG_PATH')); print(c.get('task',''))" 2>/dev/null)
+
+if [ -z "$TASK" ] || [ "$(echo "$TASK" | tr -d '[:space:]')" = "" ]; then
+  cat <<'ENDJSON'
+{
+  "decision": "stop"
+}
+ENDJSON
+  exit 0
+fi
+
 VALIDATION_CMD=$(python3 -c "import json; c=json.load(open('$CONFIG_PATH')); print(c.get('validation_command',''))" 2>/dev/null)
 ON_FAIL=$(python3 -c "import json; c=json.load(open('$CONFIG_PATH')); print(c.get('on_validation_fail','Validation failed. Fix the errors:\n{errors}'))" 2>/dev/null)
 ON_PASS=$(python3 -c "import json; c=json.load(open('$CONFIG_PATH')); print(c.get('on_validation_pass','Validation passed.'))" 2>/dev/null)

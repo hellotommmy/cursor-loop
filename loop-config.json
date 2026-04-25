@@ -1,5 +1,5 @@
 {
-  "task": "Describe your ongoing task here. This message is sent to the AI agent after each iteration to keep it working.",
+  "task": "",
   "validation_command": "",
   "validation_shell": "powershell",
   "on_validation_fail": "Fix ALL errors below, then continue with the task.\n\nBUILD ERRORS:\n{errors}",
