@@ -1,0 +1,7 @@
+{
+  "task": "Add more unit tests to increase coverage. Focus on edge cases, error paths, and boundary conditions. Each iteration should add at least 3 new test cases. Run tests after each change to verify.",
+  "validation_command": "npm test",
+  "validation_shell": "powershell",
+  "on_validation_fail": "Tests failed! Fix the failing tests before adding new ones:\n{errors}",
+  "on_validation_pass": "All tests pass. Continue adding more tests."
+}

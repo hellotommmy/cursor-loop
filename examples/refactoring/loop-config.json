@@ -1,0 +1,7 @@
+{
+  "task": "Continue refactoring the codebase:\n1. Extract duplicated logic into shared utility functions\n2. Improve type safety - replace 'any' types with proper types\n3. Add JSDoc comments to public APIs\n4. Split large files (>300 lines) into focused modules\n5. Ensure all changes pass type checking",
+  "validation_command": "npx tsc --noEmit",
+  "validation_shell": "powershell",
+  "on_validation_fail": "TypeScript errors found. Fix them before continuing:\n{errors}",
+  "on_validation_pass": "Type check passed. Continue refactoring."
+}

@@ -1,0 +1,7 @@
+{
+  "task": "1. Check for any remaining 'sorry' in Covercrypt_Executable_Model.thy and Covercrypt_Original_Model.thy and prove them.\n2. Add MORE example lemmas for both Executable Model and Original Model:\n   - Prove that certain access structure rights CAN be decrypted by certain user rights\n   - Prove that certain rights CANNOT be decrypted\n   - Add more hierarchy ordering examples\n   - Add more policy compilation examples\n   - Add more USK/XEnc record-level decryption tests\n3. Run isabelle build to verify. Use 'by eval' for executable model proofs.\n4. If any proof fails, fix it before moving on.\n5. Try to make each iteration add at least 5 new lemmas.",
+  "validation_command": "C:\\Users\\kaihong\\Desktop\\Isabelle2025\\contrib\\cygwin\\bin\\bash.exe --login -c \"cd /cygdrive/c/Users/kaihong/Downloads/ts104015/ts104015 && isabelle build -d . -o quick_and_dirty Covercrypt 2>&1\"",
+  "validation_shell": "powershell",
+  "on_validation_fail": "Isabelle build FAILED. Fix ALL errors below, then continue improving.\nRules:\n1. For tactic failures: try sledgehammer or add scaffolding lemmas.\n2. For definition/type errors: fix definitions or restructure.\n3. After fixing errors, continue with the improvement task.\n\nBUILD ERRORS:\n{errors}",
+  "on_validation_pass": "Isabelle build PASSED (no errors). Continue improving."
+}

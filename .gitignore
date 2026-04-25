@@ -1,0 +1,7 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Don't commit personal task config (users create their own)
+# Uncomment the next line if you want to keep loop-config.json out of git:
+# loop-config.json
